@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MapPin, Square, Circle, Polygon, Trash2, Save, RotateCcw } from 'lucide-react';
+import { MapPin, Square, Circle, Hexagon as Polygon, Trash2, Save, RotateCcw } from 'lucide-react';
 
 interface GeoFence {
   id: number;
