@@ -51,18 +51,18 @@ function Sidebar({ activeView, setActiveView }: SidebarProps) {
             <button
               key={item.id}
               onClick={() => setActiveView(item.id as ActiveView)}
-              className={`w-full flex items-center justify-between px-4 py-3 text-left rounded-lg transition-colors duration-200 ${
+              className={`w-full flex items-center justify-between px-4 py-3 text-left rounded-lg transition-all duration-200 hover-lift ${
                 isActive 
-                  ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-600' 
-                  : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                  ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-600 shadow-sm' 
+                  : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900 hover:shadow-sm'
               }`}
             >
               <div className="flex items-center space-x-3">
-                <Icon className="h-5 w-5" />
+                <Icon className={`h-5 w-5 transition-transform duration-200 ${isActive ? 'scale-110' : ''}`} />
                 <span className="font-medium">{item.label}</span>
               </div>
               {item.badge && (
-                <span className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                <span className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse">
                   {item.badge}
                 </span>
               )}
